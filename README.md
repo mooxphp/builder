@@ -54,6 +54,11 @@ Think about how to add each of these questions, or make them default.
 - Add languages? Which ones?
 - Scaffold! :-)
 
+### Config
+
+- Idea: use config from blade-ui-kit instead of service provider
+- Design: add theming
+
 ### Docs
 
 Probably a good idea to:
