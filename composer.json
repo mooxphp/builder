@@ -4,7 +4,12 @@
     "keywords": [
         ":vendor_name",
         "laravel",
-        ":package_slug"
+        ":package_slug",
+        "tall-stack",
+        "tailwindcss",
+        "alpinejs",
+        "livewire",
+        "admin"
     ],
     "homepage": "https://github.com/:vendor_slug/:package_slug",
     "license": "MIT",

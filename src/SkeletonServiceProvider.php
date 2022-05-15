@@ -19,7 +19,18 @@ class SkeletonServiceProvider extends PackageServiceProvider
             ->name('skeleton')
             ->hasConfigFile()
             ->hasViews()
+            ->hasTranslations()
             ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasCommand(SkeletonCommand::class)
+            ->hasModule(':module_name')
+            ->hasWidget(':widget_name')
+            ->hasBlock(':block_name')
+            ->hasAdminTheme(':admin_theme')
+            ->hasTheme(':theme_name')
+            ->hasDocs();
+    }
+
+    public function boot() {
+        Livewire::component(':livewire-component', :LivewireComponent::class);
     }
 }
