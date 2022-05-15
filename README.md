@@ -101,7 +101,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 This package is based on Package Skeleton Laravel from [Spatie](https://spatie.be/products). If you are a Laravel developer, their services, products and trainings are for you. Otherwise they love post cards.
 
 - [:author_name](https://github.com/:author_username)
-- [TALLUI Dev Team](https://github.com/orgs/usetall/people)
+- [TALLUI Devs](https://github.com/orgs/usetall/people)
+- [Freek Van der Herten](https://github.com/freekmurze)
 - [All Contributors](../../contributors)
 
 ## License
