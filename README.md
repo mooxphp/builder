@@ -17,21 +17,48 @@ This package is based on [Laravel Package Tools by Spatie](https://github.com/sp
 
 If you need help creating a package, consider picking up the <a href="https://laravelpackage.training">Laravel Package Training by Spatie</a> video course.
 
-## New Questions:
+For most of the questions in configure.php, there will be an example migration, command, module, widget, block and component configured. You can directly start to build your package editing these examples. If you need more than one migration, command, module, widget, block or component, you can add these as an array. Don't forget to switch between
 
-- Is it a core package? y/N
-- Has translations? Y/n
-- Has ... see spatie ...
-- Has admin modules? Y/n
-  - Name of module
-- Has admin widgets? y/N
-- Has editor blocks? y/N
-- Includes a theme? y/N
+- ```hasMigration``` and ```hasMigrations```, or call ```hasMigration``` multiple times
+- ```hasCommand``` and ```hasCommands```, or call ```hasCommand``` multiple times
+- ```hasModule``` and ```hasModules```, or call ```hasModule``` multiple times
+- ```hasWidget``` and ```hasWidgets```, or call ```hasWidget``` multiple times
+- ```hasBlock``` and ```hasBlocks```, or call ```hasBlock``` multiple times
 
-## Add to readme:
+We stick to the conventions made in [Spatie's Laravel Package Tools](https://github.com/spatie/laravel-package-tools). If you are unsure about the syntax, read there.
 
-- How to add modules, widgets, blocks, theme(s) ... as comma separated ...
-- Add module: hasModule('Module') -> hasModules('Module',)
+## Todo:
+
+Think about how to add each of these questions, or make them default.
+
+### Questions in configure.php
+
+- Does the package include config? Y/n
+- Does the package include views? Y/n
+- Does the package include translations? Y/n
+- Does the package include migrations? Y/n
+- Does the package include commands? Y/n
+- Does the package include admin modules? Y/n
+- Does the package include admin widgets? Y/n
+- Does the package include editor blocks? Y/n
+- Does the package include an admin theme? Y/n
+- Does the package include a website theme? Y/n
+- Does the package include docs? Y/n
+- Does the package include blade components? Y/n
+- Does the package include livewire components? Y/n
+
+### Service Provider
+
+- Add the package-provider in core or packages, extend spatie and use the own package provider
+- Add a demo blade and livewire-component
+- Add languages? Which ones?
+- Scaffold! :-)
+
+### Docs
+
+Probably a good idea to:
+
+- How to create ... modules, ...
 
 ---
 <!--/delete-->

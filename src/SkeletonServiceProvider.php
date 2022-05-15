@@ -2,35 +2,37 @@
 
 namespace VendorName\Skeleton;
 
+use Illuminate\Support\Facades\Blade;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Usetall\TalluiPackages\PackageServiceProvider;
 use VendorName\Skeleton\Commands\SkeletonCommand;
 
 class SkeletonServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package
+            // Spatie package tools
             ->name('skeleton')
             ->hasConfigFile()
             ->hasViews()
             ->hasTranslations()
             ->hasMigration('create_skeleton_table')
             ->hasCommand(SkeletonCommand::class)
-            ->hasModule(':module_name')
-            ->hasWidget(':widget_name')
-            ->hasBlock(':block_name')
-            ->hasAdminTheme(':admin_theme')
-            ->hasTheme(':theme_name')
+            // TallUI package tools
+            ->hasModule(BuilderModule::class)
+            ->hasWidget(':builder_widget')
+            ->hasBlock(':builder_block')
+            ->hasAdminTheme(':builder_admin_theme')
+            ->hasTheme(':builder_website_theme')
             ->hasDocs();
     }
 
-    public function boot() {
-        Livewire::component(':livewire-component', :LivewireComponent::class);
+    public function boot()
+    {
+        Blade::component(':blade_component', :BladeComponent::class);
+        Livewire::component(':livewire_component', :LivewireComponent::class);
     }
 }
