@@ -15,10 +15,10 @@ return [
     */
 
     'components' => [
-        ':blade_component' => Components\BladeComponents\:BladeComponent::class,
+        'blade_component' => Components\Blade\FirstComponent::class,
     ],
 
-        /*
+    /*
     |--------------------------------------------------------------------------
     | Livewire Components
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     */
 
     'livewire' => [
-        ':livewire_component' => Components\LivewireComponents\:LivewireComponent::class,
+        'livewire_component' => Components\Livewire\FirstComponent::class,
     ],
 
     /*
@@ -51,12 +51,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Third Party Asset Libraries
+    | Asset Libraries
     |--------------------------------------------------------------------------
     |
-    | These settings hold reference to all third party libraries and their
-    | asset files served through a CDN. Individual components can require
-    | these asset files through their static `$assets` property.
+    | Components can require these asset files through their static `$assets`
+    | property.
     |
     */
 

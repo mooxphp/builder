@@ -190,10 +190,12 @@ foreach ($files as $file) {
         ':package_slug' => $packageSlug,
         ':package_slug_without_prefix' => $packageSlugWithoutPrefix,
         'Skeleton' => $className,
+        ':Builder' => $className,
         'builder_slug' => $packageSlug,
         'migration_table_name' => title_snake($packageSlug),
         'variable' => $variableName,
         ':package_description' => $description,
+        ':builder' => $packageSlugWithoutPrefix,
     ]);
 
     match (true) {
