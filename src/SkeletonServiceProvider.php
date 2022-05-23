@@ -19,11 +19,11 @@ class SkeletonServiceProvider extends PackageServiceProvider
             ->hasTranslations()
             ->hasMigration('create_skeleton_table')
             ->hasCommand(SkeletonCommand::class)
-            ->hasModule(:BuilderModule::class)
-            ->hasWidget(':builder_widget')
-            ->hasBlock(':builder_block')
-            ->hasAdminTheme(':builder_admin_theme')
-            ->hasTheme(':builder_website_theme');
+            //->hasModule(:BuilderModule::class)
+            //->hasWidget(':builder_widget')
+            //->hasBlock(':builder_block')
+            //->hasAdminTheme(':builder_admin_theme')
+            //->hasTheme(':builder_website_theme');
     }
 
     public function boot()

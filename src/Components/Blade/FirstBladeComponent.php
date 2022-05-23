@@ -2,7 +2,10 @@
 
 namespace VendorName\Skeleton\Components\Blade;
 
-class FirstComponent extends Component
+use VendorName\Skeleton\BladeComponent;
+use Illuminate\Contracts\View\View;
+
+class FirstBladeComponent extends Component
 {
     public $first_var = "";
 
@@ -13,7 +16,7 @@ class FirstComponent extends Component
 
     public function render()
     {
-        return view('blade.first-component');
+        return view('blade.first-blade-component');
     }
 
 }

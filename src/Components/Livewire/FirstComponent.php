@@ -2,9 +2,11 @@
 
 namespace VendorName\Skeleton\Components\Livewire;
 
+use VendorName\Skeleton\LivewireComponent;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
-class FirstComponent extends Component
+class FirstLivewireComponent extends Component
 {
     public $first_var = "";
 
@@ -15,7 +17,7 @@ class FirstComponent extends Component
 
     public function render()
     {
-        return view('livewire.first-component');
+        return view('livewire.first-livewire-component');
     }
 
 }
