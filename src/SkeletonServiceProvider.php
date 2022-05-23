@@ -18,7 +18,7 @@ class SkeletonServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasTranslations()
             ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class)
+            ->hasCommand(SkeletonCommand::class);
             //->hasModule(:BuilderModule::class)
             //->hasWidget(':builder_widget')
             //->hasBlock(':builder_block')
