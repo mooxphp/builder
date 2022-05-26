@@ -1,14 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace VendorName\Skeleton\Components\Livewire;
 
-use VendorName\Skeleton\Components\LivewireComponent;
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use VendorName\Skeleton\Components\LivewireComponent;
 
 class FirstLivewireComponent extends Component
 {
-    public $first_var = "";
+    /** @var array */
+    protected static $assets = ['example'];
+
+    /** @var string|null */
+    public string $first_var = "";
 
     public function mount()
     {

@@ -3,10 +3,14 @@
 namespace VendorName\Skeleton;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Str;
+use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use VendorName\Skeleton\Commands\SkeletonCommand;
+use VendorName\Skeleton\Components\BladeComponent;
+use VendorName\Skeleton\Components\LivewireComponent;
 
 class SkeletonServiceProvider extends PackageServiceProvider
 {
@@ -19,15 +23,11 @@ class SkeletonServiceProvider extends PackageServiceProvider
             ->hasTranslations()
             ->hasMigration('create_skeleton_table')
             ->hasCommand(SkeletonCommand::class);
-            //->hasModule(:BuilderModule::class)
-            //->hasWidget(':builder_widget')
-            //->hasBlock(':builder_block')
-            //->hasAdminTheme(':builder_admin_theme')
-            //->hasTheme(':builder_website_theme');
     }
 
     public function boot()
     {
+        $this->bootResources();
         $this->bootBladeComponents();
         $this->bootLivewireComponents();
         $this->bootDirectives();
@@ -75,13 +75,13 @@ class SkeletonServiceProvider extends PackageServiceProvider
             collect($files)->filter(function (string $file) {
                 return Str::endsWith($file, '.css');
             })->each(function (string $style) {
-                VendorName\Skeleton::addStyle($style);
+                Skeleton::addStyle($style);
             });
 
             collect($files)->filter(function (string $file) {
                 return Str::endsWith($file, '.js');
             })->each(function (string $script) {
-                VendorName\Skeleton::addScript($script);
+                Skeleton::addScript($script);
             });
         }
     }
