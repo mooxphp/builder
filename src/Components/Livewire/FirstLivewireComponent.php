@@ -2,7 +2,7 @@
 
 namespace VendorName\Skeleton\Components\Livewire;
 
-use VendorName\Skeleton\LivewireComponent;
+use VendorName\Skeleton\Components\LivewireComponent;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 

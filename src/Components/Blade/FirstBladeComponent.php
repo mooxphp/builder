@@ -2,7 +2,7 @@
 
 namespace VendorName\Skeleton\Components\Blade;
 
-use VendorName\Skeleton\BladeComponent;
+use VendorName\Skeleton\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
 
 class FirstBladeComponent extends Component

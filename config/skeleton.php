@@ -15,7 +15,7 @@ return [
     */
 
     'components' => [
-        'blade_component' => Components\Blade\FirstComponent::class,
+        'first-blade-component' => Components\Blade\FirstBladeComponent::class,
     ],
 
     /*
@@ -29,7 +29,7 @@ return [
     */
 
     'livewire' => [
-        'livewire_component' => Components\Livewire\FirstComponent::class,
+        'first-livewire-component' => Components\Livewire\FirstLivewireComponent::class,
     ],
 
     /*

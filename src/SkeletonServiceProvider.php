@@ -88,11 +88,11 @@ class SkeletonServiceProvider extends PackageServiceProvider
 
     private function bootDirectives(): void
     {
-        Blade::directive(':builderStyles', function (string $expression) {
+        Blade::directive(':BuilderStyles', function (string $expression) {
             return "<?php echo VendorName\Skeleton\\VendorName\Skeleton::outputStyles($expression); ?>";
         });
 
-        Blade::directive(':builderScripts', function (string $expression) {
+        Blade::directive(':BuilderScripts', function (string $expression) {
             return "<?php echo VendorName\Skeleton\\VendorName\Skeleton::outputScripts($expression); ?>";
         });
     }
