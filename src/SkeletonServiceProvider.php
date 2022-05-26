@@ -33,6 +33,11 @@ class SkeletonServiceProvider extends PackageServiceProvider
         $this->bootDirectives();
     }
 
+    private function bootResources(): void
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', ':builder');
+    }
+
     private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
