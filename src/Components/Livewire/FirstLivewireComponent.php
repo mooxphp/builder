@@ -15,14 +15,13 @@ class FirstLivewireComponent extends Component
     /** @var string|null */
     public string $first_var = "";
 
-    public function mount()
+    public function mount(): void
     {
         // mount
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.first-livewire-component');
     }
-
 }
