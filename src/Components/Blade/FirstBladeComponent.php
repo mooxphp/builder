@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace VendorName\Skeleton\Components\Blade;
 
-use VendorName\Skeleton\Components\BladeComponent;
 use Illuminate\Contracts\View\View;
+use VendorName\Skeleton\Components\BladeComponent;
 
-class FirstBladeComponent extends Component
+class FirstBladeComponent extends BladeComponent
 {
     /** @var array */
     protected static $assets = ['example'];
@@ -22,7 +22,7 @@ class FirstBladeComponent extends Component
 
     public function render(): View
     {
-        return view('blade.first-blade-component');
+        return view(':builder::components.blade.first-blade-component');
     }
 
 }

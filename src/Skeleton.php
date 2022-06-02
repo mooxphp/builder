@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Usetall\TalluiCore;
+namespace VendorName\Skeleton;
 
 final class Skeleton
 {

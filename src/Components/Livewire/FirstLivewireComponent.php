@@ -7,7 +7,7 @@ namespace VendorName\Skeleton\Components\Livewire;
 use Illuminate\Contracts\View\View;
 use VendorName\Skeleton\Components\LivewireComponent;
 
-class FirstLivewireComponent extends Component
+class FirstLivewireComponent extends LivewireComponent
 {
     /** @var array */
     protected static $assets = ['example'];
@@ -22,6 +22,6 @@ class FirstLivewireComponent extends Component
 
     public function render(): View
     {
-        return view('livewire.first-livewire-component');
+        return view(':builder::components.livewire.first-livewire-component');
     }
 }
