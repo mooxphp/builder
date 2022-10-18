@@ -11,6 +11,8 @@ use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use VendorName\Skeleton\Commands\SkeletonCommand;
+use VendorName\Skeleton\Components\BladeComponent;
+use VendorName\Skeleton\Components\LivewireComponent;
 
 class SkeletonServiceProvider extends PackageServiceProvider
 {
