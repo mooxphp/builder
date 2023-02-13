@@ -105,7 +105,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require tallui_package_builder/tallui-package-builder
+composer require usetall/tallui-package-builder
 ```
 
 You can publish and run the migrations with:
