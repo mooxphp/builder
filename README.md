@@ -100,17 +100,12 @@ We stick to the conventions made in [Spatie's Laravel Package Tools](https://git
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Requirements
-
--   PHP 8.1 or higher
--   Laravel 9.0 or higher
-
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require usetall/tallui-package-builder
+composer require tallui_package_builder/tallui-package-builder
 ```
 
 You can publish and run the migrations with:
@@ -158,11 +153,11 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/usetall/tallui/blob/main/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-Please review [our security policy](https://github.com/usetall/tallui/security/policy) on how to report security vulnerabilities.
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
