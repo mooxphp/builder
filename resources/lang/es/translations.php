@@ -12,5 +12,5 @@ return [
     'totalthree' => 'Desarrollador tres',
     'name' => 'Nombre',
     'started_at' => 'Empezó a las',
-    'failed' => 'fallida',
+    'failed' => 'failed',
 ];
