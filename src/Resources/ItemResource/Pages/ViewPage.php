@@ -8,7 +8,7 @@ use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Database\Eloquent\Model;
 use Moox\Builder\Resources\ItemResource;
 
-class ViewItem extends ViewRecord
+class ViewPage extends ViewRecord
 {
     protected static string $resource = ItemResource::class;
 

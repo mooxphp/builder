@@ -24,10 +24,10 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Moox\Builder\Models\Item;
-use Moox\Builder\Resources\ItemResource\Pages\CreateItem;
-use Moox\Builder\Resources\ItemResource\Pages\EditItem;
-use Moox\Builder\Resources\ItemResource\Pages\ListItem;
-use Moox\Builder\Resources\ItemResource\Pages\ViewItem;
+use Moox\Builder\Resources\ItemResource\Pages\CreatePage;
+use Moox\Builder\Resources\ItemResource\Pages\EditPage;
+use Moox\Builder\Resources\ItemResource\Pages\ListPage;
+use Moox\Builder\Resources\ItemResource\Pages\ViewPage;
 use Moox\Builder\Resources\ItemResource\Widgets\ItemWidgets;
 
 //use Moox\Core\Forms\Components\TitleWithSlugInput;
@@ -100,16 +100,16 @@ class ItemResource extends Resource
                                             ->button()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->action(fn ($record) => $record->restore())
-                                            ->visible(fn ($livewire, $record) => $record && $record->trashed() && $livewire instanceof ViewItem),
+                                            ->visible(fn ($livewire, $record) => $record && $record->trashed() && $livewire instanceof ViewPage),
                                         Actions\Action::make('save')
                                             ->label(__('core::core.save'))
                                             ->color('primary')
                                             ->button()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->action(function ($livewire) {
-                                                $livewire instanceof CreateItem ? $livewire->create() : $livewire->save();
+                                                $livewire instanceof CreatePage ? $livewire->create() : $livewire->save();
                                             })
-                                            ->visible(fn ($livewire) => $livewire instanceof CreateItem || $livewire instanceof EditItem),
+                                            ->visible(fn ($livewire) => $livewire instanceof CreatePage || $livewire instanceof EditPage),
                                         Actions\Action::make('publish')
                                             ->label(__('core::core.publish'))
                                             ->color('success')
@@ -121,7 +121,7 @@ class ItemResource extends Resource
                                                     $data['published_at'] = now();
                                                 }
                                                 $livewire->form->fill($data);
-                                                $livewire instanceof CreateItem ? $livewire->create() : $livewire->save();
+                                                $livewire instanceof CreatePage ? $livewire->create() : $livewire->save();
                                             })
                                             ->hidden(fn ($livewire, $record) => $record && $record->trashed()),
                                         Actions\Action::make('saveAndCreateAnother')
@@ -132,35 +132,35 @@ class ItemResource extends Resource
                                             ->action(function ($livewire) {
                                                 $livewire->saveAndCreateAnother();
                                             })
-                                            ->visible(fn ($livewire) => $livewire instanceof CreateItem),
+                                            ->visible(fn ($livewire) => $livewire instanceof CreatePage),
                                         Actions\Action::make('cancel')
                                             ->label(__('core::core.cancel'))
                                             ->color('secondary')
                                             ->outlined()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->url(fn () => static::getUrl('index'))
-                                            ->visible(fn ($livewire) => $livewire instanceof CreateItem),
+                                            ->visible(fn ($livewire) => $livewire instanceof CreatePage),
                                         Actions\Action::make('edit')
                                             ->label(__('core::core.edit'))
                                             ->color('primary')
                                             ->button()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->url(fn ($record) => static::getUrl('edit', ['record' => $record]))
-                                            ->visible(fn ($livewire, $record) => $livewire instanceof ViewItem && ! $record->trashed()),
+                                            ->visible(fn ($livewire, $record) => $livewire instanceof ViewPage && ! $record->trashed()),
                                         Actions\Action::make('restore')
                                             ->label(__('core::core.restore'))
                                             ->color('success')
                                             ->button()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->action(fn ($record) => $record->restore())
-                                            ->visible(fn ($livewire, $record) => $record && $record->trashed() && $livewire instanceof EditItem),
+                                            ->visible(fn ($livewire, $record) => $record && $record->trashed() && $livewire instanceof EditPage),
                                         Actions\Action::make('delete')
                                             ->label(__('core::core.delete'))
                                             ->color('danger')
                                             ->link()
                                             ->extraAttributes(['class' => 'w-full'])
                                             ->action(fn ($record) => $record->delete())
-                                            ->visible(fn ($livewire, $record) => $record && ! $record->trashed() && $livewire instanceof EditItem),
+                                            ->visible(fn ($livewire, $record) => $record && ! $record->trashed() && $livewire instanceof EditPage),
                                     ]),
                                     Select::make('type')
                                         ->options(static::getModel()::getTypeOptions())
@@ -279,10 +279,10 @@ class ItemResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListItem::route('/'),
-            'edit' => EditItem::route('/{record}/edit'),
-            'create' => CreateItem::route('/create'),
-            'view' => ViewItem::route('/{record}'),
+            'index' => ListPage::route('/'),
+            'edit' => EditPage::route('/{record}/edit'),
+            'create' => CreatePage::route('/create'),
+            'view' => ViewPage::route('/{record}'),
         ];
     }
 

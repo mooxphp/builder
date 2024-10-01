@@ -163,6 +163,7 @@ class InstallCommand extends Command
             }
         } else {
             alert('There are no new plugins detected.');
+
         }
     }
 
@@ -180,12 +181,14 @@ class InstallCommand extends Command
                 options: [...$providerNames],
                 default: [$providerNames[0]],
             );
+
         }
         if (count($providers) == 1) {
             $providerPath .= '/'.$providers[0]->getBasename();
         }
 
         return $providerPath;
+
     }
 
     public function sayGoodbye(): void
