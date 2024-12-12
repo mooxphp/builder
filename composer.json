@@ -17,7 +17,9 @@
         }
     ],
     "require": {
-        "moox/core": "^2.2.0"
+        "moox/core": "^2.2.0",
+        "moox/category": "*",
+        "moox/tag": "*"
     },
     "autoload": {
         "psr-4": {
